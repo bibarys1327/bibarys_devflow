@@ -2,7 +2,11 @@
 import action from "../handlers/action";
 import { AskQuestionSchema } from "../validations";
 import handleError from "../handlers/error";
-import { ActionResponse, ErrorResponse } from "@/types/global";
+import {
+  ActionResponse,
+  ErrorResponse,
+  Question as QuestionType,
+} from "@/types/global";
 import mongoose from "mongoose";
 import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
@@ -16,7 +20,7 @@ interface CreateQuestionParams {
 
 export async function createQuestion(
   params: CreateQuestionParams
-): Promise<ActionResponse> {
+): Promise<ActionResponse<QuestionType>> {
   const validationResult = await action({
     params,
     schema: AskQuestionSchema,
