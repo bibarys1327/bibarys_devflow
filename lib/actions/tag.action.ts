@@ -15,7 +15,6 @@ import { FilterQuery } from "mongoose";
 import { Question, Tag } from "@/database";
 import { ITagDoc } from "@/database/tag.model";
 import { GetTagQuestionsParams } from "@/types/action";
-import { skip } from "node:test";
 
 export const getTags = async (
   params: PaginatedSearchParams
